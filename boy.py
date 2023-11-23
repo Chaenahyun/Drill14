@@ -291,8 +291,8 @@ class Boy:
 
     def draw(self):
         #제한된 영역만 스크롤링
-        #sx, sy = get_canvas_width() // 2, get_canvas_height() // 2
-        sx, sy = self.x - self.bg.window_left, self.y - self.bg.window_bottom
+        sx, sy = get_canvas_width() // 2, get_canvas_height() // 2
+        #sx, sy = self.x - self.bg.window_left, self.y - self.bg.window_bottom
         self.image.clip_draw(int(self.frame) * 100, self.action * 100, 100, 100, sx, sy)
 
         #무한 스크롤링(update 함수 부분 주석처리 해야됨)

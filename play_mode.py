@@ -8,6 +8,7 @@ import game_world
 
 import server
 from boy import Boy
+from ball import Ball
 
 # fill here
 #from background import FixedBackground as Background
@@ -33,7 +34,13 @@ def init():
     game_world.add_object(server.background, 0)
     server.boy = Boy()
     game_world.add_object(server.boy, 1)
-    pass
+
+    balls = [Ball() for _ in range(100)]
+    for ball in balls:
+        game_world.add_object(ball, 1)
+        game_world.add_collision_pair('boy:ball', None, ball)
+        game_world.add_collision_pair('zombie:ball', None, ball)
+
 
 def finish():
     game_world.clear()

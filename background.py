@@ -26,8 +26,6 @@ class FixedBackground:
 
 
 
-
-
 class TileBackground:
 
     def __init__(self):
@@ -80,6 +78,8 @@ class InfiniteBackground:
         self.ch = get_canvas_height()
         self.w = self.image.w
         self.h = self.image.h
+        self.window_left = 0
+        self.window_bottom = 0
 
 
 
